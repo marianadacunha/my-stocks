@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>Symbol</tr>
+            <tr>Name</tr>
+            <tr>Shares</tr>
+            <tr>Price</tr>
+            <tr>Total</tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"> {{ stockGains }} </td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

@@ -8,10 +8,10 @@
     <table class="table table-striped animate__animated animate__fadeIn animate__slow">
         <thead>
             <tr>
-            <th>Symbol</th>
-            <th>Shares</th>
-            <th>Price</th>
-            <th>Transacted</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,6 @@
                 <td>{{ transaction["shares"] }}</td>
                 <td>{{ transaction["price"] }}</td>
                 <td>{{ transaction["transacted"] }}</td>
-                <script>changeColor();</script>
             </tr>
             {% endfor %}
         </tbody>

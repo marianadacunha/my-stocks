@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/buy" method="post">
+    <form action="/buy" method="post" class="animate__animated animate__fadeIn animate__slow">
         <div class="form-group">
-            <input autocomplete="off" class="form-control" type="text" name="symbol" placeholder="Enter the stock name here" autofocus>
+            <input autocomplete="off" class="form-control" type="text" name="symbol" placeholder="Enter the stock name here" oninput="this.value = this.value.toUpperCase()" autofocus>
         </div>
         <div class="form-group">
             <input autocomplete="off" class="form-control" type="number" min="1" name="shares" placeholder="Number of shares">

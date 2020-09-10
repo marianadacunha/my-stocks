@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="post">
+    <form action="/register" method="post" class="animate__animated animate__fadeIn animate__slow">
         <div class="form-group">
             <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
         </div>
@@ -14,6 +14,14 @@
         </div>
         <div class="form-group">
             <input class="form-control" name="confirmation" placeholder="Password (again)" type="password">
+        </div>
+        <div class="form-group">
+            <ul class="registration-list">
+                <li>Please enter a password with more than 8 characters</li>
+                <li>Password must contain at least one number</li>
+                <li>Password must contain at least one uppercase letter</li>
+                <li>Password must contain at least one special character</li>
+            </ul>
         </div>
         <button class="btn btn-primary" type="submit">Register</button>
     </form>

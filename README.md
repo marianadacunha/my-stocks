@@ -154,3 +154,6 @@ Be sure to test your web app manually too, as by
 * trying to sell more shares than a user has,
 * inputting an invalid stock symbol, and
 * including potentially dangerous characters like ' and ; in SQL queries.
+
+# Preview
+![Screenshot](https://i.ibb.co/Pcr0B2H/Captura-de-tela-2020-09-11-18-07-58.png)

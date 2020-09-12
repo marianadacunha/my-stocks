@@ -7,7 +7,7 @@ Implement a website via which users can “buy” and “sell” stocks, a la th
 You’re about to implement a web app via which you can manage portfolios of stocks. Not only will this tool allow you to check real stocks’ actual prices and portfolios’ values, it will also let you “buy” and "sell" stocks by querying IEX for stocks’ prices.
 
 Indeed, IEX lets you download stock quotes via their API (application programming interface) using URLs like https://cloud-sse.iexapis.com/stable/stock/nflx/quote?token=API_KEY. Notice how Netflix’s symbol (NFLX) is embedded in this URL; that’s how IEX knows whose data to return. That link won’t actually return any data because IEX requires you to use an API key, but if it did, you’d see a response in JSON (JavaScript Object Notation) format like this:
-
+```
 $ {  </br>
 $    "symbol": "NFLX",</br>
 $    "companyName": "Netflix, Inc.",</br>
@@ -52,6 +52,7 @@ $    "week52Low": 231.23,</br>
 $    "ytdChange": 0.18907500000000002,</br>
 $    "lastTradeTime": 1564776000616</br>
 $ }</br>
+```
 
 Notice how, between the curly braces, there’s a comma-separated list of key-value pairs, with a colon separating each key from its value.
 

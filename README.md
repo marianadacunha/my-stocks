@@ -8,50 +8,50 @@ You’re about to implement a web app via which you can manage portfolios of sto
 
 Indeed, IEX lets you download stock quotes via their API (application programming interface) using URLs like https://cloud-sse.iexapis.com/stable/stock/nflx/quote?token=API_KEY. Notice how Netflix’s symbol (NFLX) is embedded in this URL; that’s how IEX knows whose data to return. That link won’t actually return any data because IEX requires you to use an API key, but if it did, you’d see a response in JSON (JavaScript Object Notation) format like this:
 
-> {  </br>
->    "symbol": "NFLX",</br>
->    "companyName": "Netflix, Inc.",</br>
->    "primaryExchange": "NASDAQ",</br>
->    "calculationPrice": "close",</br>
->    "open": 317.49,</br>
->    "openTime": 1564752600327,</br>
->    "close": 318.83,</br>
->    "closeTime": 1564776000616,</br>
->    "high": 319.41,</br>
->    "low": 311.8,</br>
->    "latestPrice": 318.83,</br>
->    "latestSource": "Close",</br>
->    "latestTime": "August 2, 2019",</br>
->    "latestUpdate": 1564776000616,</br>
->    "latestVolume": 6232279,</br>
->    "iexRealtimePrice": null,</br>
->    "iexRealtimeSize": null,</br>
->    "iexLastUpdated": null,</br>
->    "delayedPrice": 318.83,</br>
->    "delayedPriceTime": 1564776000616,</br>
->    "extendedPrice": 319.37,</br>
->    "extendedChange": 0.54,</br>
->    "extendedChangePercent": 0.00169,</br>
->    "extendedPriceTime": 1564876784244,</br>
->    "previousClose": 319.5,</br>
->    "previousVolume": 6563156,</br>
->    "change": -0.67,</br>
->    "changePercent": -0.0021,</br>
->    "volume": 6232279,</br>
->    "iexMarketPercent": null,</br>
->    "iexVolume": null,</br>
->    "avgTotalVolume": 7998833,</br>
->    "iexBidPrice": null,</br>
->    "iexBidSize": null,</br>
->    "iexAskPrice": null,</br>
->    "iexAskSize": null,</br>
->    "marketCap": 139594933050,</br>
->    "peRatio": 120.77,</br>
->    "week52High": 386.79,</br>
->    "week52Low": 231.23,</br>
->    "ytdChange": 0.18907500000000002,</br>
->    "lastTradeTime": 1564776000616</br>
-> }</br>
+$ {  </br>
+$    "symbol": "NFLX",</br>
+$    "companyName": "Netflix, Inc.",</br>
+$    "primaryExchange": "NASDAQ",</br>
+$    "calculationPrice": "close",</br>
+$    "open": 317.49,</br>
+$    "openTime": 1564752600327,</br>
+$    "close": 318.83,</br>
+$    "closeTime": 1564776000616,</br>
+$    "high": 319.41,</br>
+$    "low": 311.8,</br>
+$    "latestPrice": 318.83,</br>
+$    "latestSource": "Close",</br>
+$    "latestTime": "August 2, 2019",</br>
+$    "latestUpdate": 1564776000616,</br>
+$    "latestVolume": 6232279,</br>
+$    "iexRealtimePrice": null,</br>
+$    "iexRealtimeSize": null,</br>
+$    "iexLastUpdated": null,</br>
+$    "delayedPrice": 318.83,</br>
+$    "delayedPriceTime": 1564776000616,</br>
+$    "extendedPrice": 319.37,</br>
+$    "extendedChange": 0.54,</br>
+$    "extendedChangePercent": 0.00169,</br>
+$    "extendedPriceTime": 1564876784244,</br>
+$    "previousClose": 319.5,</br>
+$    "previousVolume": 6563156,</br>
+$    "change": -0.67,</br>
+$    "changePercent": -0.0021,</br>
+$    "volume": 6232279,</br>
+$    "iexMarketPercent": null,</br>
+$    "iexVolume": null,</br>
+$    "avgTotalVolume": 7998833,</br>
+$    "iexBidPrice": null,</br>
+$    "iexBidSize": null,</br>
+$    "iexAskPrice": null,</br>
+$    "iexAskSize": null,</br>
+$    "marketCap": 139594933050,</br>
+$    "peRatio": 120.77,</br>
+$    "week52High": 386.79,</br>
+$    "week52Low": 231.23,</br>
+$    "ytdChange": 0.18907500000000002,</br>
+$    "lastTradeTime": 1564776000616</br>
+$ }</br>
 
 Notice how, between the curly braces, there’s a comma-separated list of key-value pairs, with a colon separating each key from its value.
 

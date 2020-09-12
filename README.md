@@ -3,6 +3,20 @@ Implement a website via which users can “buy” and “sell” stocks, a la th
 
 ![C$50 Finance](https://cs50.harvard.edu/x/2020/tracks/web/finance/finance.png)
 
+# Setup
+To run this project, you will nedd to install Flask locally using the pip command.
+You can run this command from your command prompt window.
+```
+$ pip install flask
+```
+Then run the python script and go to the URL https://127.0.0.1:5000/ from a web browser.
+```
+$ python "application.py"
+```
+
+# Preview
+![Screenshot](https://i.ibb.co/Pcr0B2H/Captura-de-tela-2020-09-11-18-07-58.png)
+
 # Background
 You’re about to implement a web app via which you can manage portfolios of stocks. Not only will this tool allow you to check real stocks’ actual prices and portfolios’ values, it will also let you “buy” and "sell" stocks by querying IEX for stocks’ prices.
 
@@ -57,27 +71,6 @@ $ }
 Notice how, between the curly braces, there’s a comma-separated list of key-value pairs, with a colon separating each key from its value.
 
 Let’s turn our attention now to this problem’s distribution code!
-
-# Understanding
-### application.py
-Open up application.py. Atop the file are a bunch of imports, among them CS50’s SQL module and a few helper functions. More on those soon.
-
-After configuring Flask, notice how this file disables caching of responses (provided you’re in debugging mode, which you are by default on CS50 IDE), lest you make a change to some file but your browser not notice. Notice next how it configures Jinja with a custom “filter,” usd, a function (defined in helpers.py) that will make it easier to format values as US dollars (USD). It then further configures Flask to store sessions on the local filesystem (i.e., disk) as opposed to storing them inside of (digitally signed) cookies, which is Flask’s default. The file then configures CS50’s SQL module to use finance.db, a SQLite database whose contents we’ll soon see!
-
-Thereafter are a whole bunch of routes, only two of which are fully implemented: login and logout. Read through the implementation of login first. Notice how it uses db.execute (from CS50’s library) to query finance.db. And notice how it uses check_password_hash to compare hashes of users’ passwords. Finally, notice how login “remembers” that a user is logged in by storing his or her user_id, an INTEGER, in session. That way, any of this file’s routes can check which user, if any, is logged in. Meanwhile, notice how logout simply clears session, effectively logging a user out.
-
-Notice how most routes are “decorated” with @login_required (a function defined in helpers.py too). That decorator ensures that, if a user tries to visit any of those routes, he or she will first be redirected to login so as to log in.
-
-Notice too how most routes support GET and POST. Even so, most of them (for now!) simply return an “apology,” since they’re not yet implemented.
-
-### helpers.py
-Next take a look at helpers.py. Ah, there’s the implementation of apology. Notice how it ultimately renders a template, apology.html. It also happens to define within itself another function, escape, that it simply uses to replace special characters in apologies. By defining escape inside of apology, we’ve scoped the former to the latter alone; no other functions will be able (or need) to call it.
-
-Next in the file is login_required. No worries if this one’s a bit cryptic, but if you’ve ever wondered how a function can return another function, here’s an example!
-
-Thereafter is lookup, a function that, given a symbol (e.g., NFLX), returns a stock quote for a company in the form of a dict with three keys: name, whose value is a str, the name of the company; price, whose value is a float; and symbol, whose value is a str, a canonicalized (uppercase) version of a stock’s symbol, irrespective of how that symbol was capitalized when passed into lookup.
-
-Last in the file is usd, a short function that simply formats a float as USD (e.g., 1234.56 is formatted as $1,234.56).
 
 # Specification
 
@@ -155,6 +148,3 @@ Be sure to test your web app manually too, as by
 * trying to sell more shares than a user has,
 * inputting an invalid stock symbol, and
 * including potentially dangerous characters like ' and ; in SQL queries.
-
-# Preview
-![Screenshot](https://i.ibb.co/Pcr0B2H/Captura-de-tela-2020-09-11-18-07-58.png)

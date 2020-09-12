@@ -4,7 +4,7 @@ Implement a website via which users can “buy” and “sell” stocks, a la th
 ![C$50 Finance](https://cs50.harvard.edu/x/2020/tracks/web/finance/finance.png)
 
 # Setup
-To run this project, you will nedd to install Flask locally using the pip command.
+To run this project, you will need to install Flask locally using the pip command.
 You can run this command from your command prompt window.
 ```
 $ pip install flask

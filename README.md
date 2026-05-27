@@ -148,3 +148,4 @@ Be sure to test your web app manually too, as by
 * trying to sell more shares than a user has,
 * inputting an invalid stock symbol, and
 * including potentially dangerous characters like ' and ; in SQL queries.
+

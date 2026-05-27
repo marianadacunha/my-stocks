@@ -37,15 +37,14 @@ def login_required(f):
 
 def lookup(symbol):
     """Look up quote for symbol."""
+    api_key = os.environ.get("API_KEY")
 
-    # Contact API
     try:
-        response = requests.get(f"https://cloud-sse.iexapis.com/stable/stock/{urllib.parse.quote_plus(symbol)}/quote?token=pk_c8b9b2ccd9444bf6814d4c3f904cbd7d")
+        response = requests.get(f"https://cloud-sse.iexapis.com/stable/stock/{urllib.parse.quote_plus(symbol)}/quote?token={api_key}")
         response.raise_for_status()
     except requests.RequestException:
         return None
 
-    # Parse response
     try:
         quote = response.json()
         return {
